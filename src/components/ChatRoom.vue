@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     setupWebSocket() {
-      this.socket = new WebSocket('wss://thenewcoda.workers.dev')
+      this.socket = new WebSocket('wss://ws.thenewcoda.workers.dev')
 
       this.socket.onopen = () => {
         console.log('Connected to WebSocket server')

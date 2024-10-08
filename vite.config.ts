@@ -3,14 +3,16 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: './', // Ensure the base path for assets and scripts is relative
+  root: 'src',
   plugins: [vue()],
   build: {
     rollupOptions: {
       input: {
-        home: resolve(__dirname, 'public/home.html'),
-        chat: resolve(__dirname, 'public/chat.html')
+        home: resolve(__dirname, 'src/home.html'), // Input HTML
+        chat: resolve(__dirname, 'src/chat.html') // Input HTML
       }
-    }
+    },
+    // You can specify the output directory here
+    outDir: '../dist' // This will be the root folder for your output
   }
 })
